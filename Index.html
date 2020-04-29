@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>JSP5exo4</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <img src="img1.jpg" id="image1" onclick="changeImage()" onmouseover="zoomIn()" onmouseout="zoomOut()" width="200" height="250" />
+    <script>
+        //Fonction permettant de modifier l'image au clic
+        function changeImage() {
+            var image = document.getElementById('image1');
+            if (image.src.match('img2')) {
+                image.src='img1.jpg';
+            }else {
+                image.src='img2.jpg';            
+            }
+        }
+        //Fonction permettant de zoomer l'image *2 au survol
+        function zoomIn() {
+            image1.height *= 2; //Equivaux à   image1.height = image1.height * 2
+            image1.width *= 2;
+        }
+        //Fonction permettant de réduire l'image par deux quand on ne le survole plus
+        function zoomOut() {
+            image1.height=image1.height/2;
+            image1.width=image1.width/2;
+        }
+    </script>
+</body>
+</html>
